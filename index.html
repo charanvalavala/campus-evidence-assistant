@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f3f5ef">
+    <meta name="description" content="Search official BITS Pilani Hyderabad academic information with source links and visible limits.">
+    <title>Campus Evidence Finder</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="topbar">
+      <a class="brand" href="#main" aria-label="Campus Evidence Finder home"><span class="brand-mark">C</span><span>Campus Evidence Finder</span></a>
+      <span class="topbar-note">BITS Pilani · Hyderabad</span>
+    </header>
+    <main id="main">
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow"><span class="pulse"></span> A source-first student information tool</p>
+        <h1 id="page-title">Find the page<br><em>behind the answer.</em></h1>
+        <p class="lede">Search a small set of official Hyderabad campus and institute pages. Each result shows the evidence and a link to check the original source.</p>
+        <form id="search-form" class="search-form">
+          <label for="query">What are you looking for?</label>
+          <div class="search-field">
+            <input id="query" name="query" type="search" maxlength="300" placeholder="Try “Where can I find current academic regulations?”" autocomplete="off" required>
+            <button type="submit">Find sources <span aria-hidden="true">↗</span></button>
+          </div>
+          <p class="field-hint">Search runs locally in your browser. Your query is not sent to a server.</p>
+        </form>
+        <div class="quick-searches" aria-label="Example searches">
+          <button type="button" data-query="Who handles course registration and transcripts at Hyderabad?">Course registration</button>
+          <button type="button" data-query="Where are the current academic regulations and timetable?">Academic documents</button>
+          <button type="button" data-query="What are the BITSAT 2026 scholarship rules?">Scholarships</button>
+        </div>
+      </section>
+
+      <section class="results-section" aria-labelledby="results-title">
+        <div class="results-heading">
+          <div><p class="eyebrow">Evidence retrieval</p><h2 id="results-title">Relevant sources</h2></div>
+          <span class="method-pill">BM25 · top 3</span>
+        </div>
+        <p id="status" class="status" role="status" aria-live="polite">Enter a question or choose an example to search the curated source set.</p>
+        <ol id="results" class="results-list"></ol>
+      </section>
+
+      <aside class="limits" aria-labelledby="limits-title">
+        <div class="limits-icon" aria-hidden="true">i</div>
+        <div><h2 id="limits-title">Use the linked source for decisions</h2><p>This tool finds relevant pages; it does not decide personal eligibility or replace institute guidance. Regulations and admissions terms can change. Scholarship details are specific to the stated admission cohort.</p></div>
+      </aside>
+
+      <section class="method" aria-labelledby="method-title">
+        <p class="eyebrow">How it works</p>
+        <h2 id="method-title">Small corpus. Measurable retrieval.</h2>
+        <div class="method-grid"><article><span>01</span><h3>Official pages</h3><p>Four public institutional sources with a visible last-checked date.</p></article><article><span>02</span><h3>Lexical ranking</h3><p>BM25 ranks title and evidence text without calling an external model.</p></article><article><span>03</span><h3>Human labels</h3><p>Nine hand-labeled questions report Hit@3 and reciprocal rank in the repository.</p></article></div>
+      </section>
+    </main>
+    <footer><span>Campus Evidence Finder</span><span>Local search · no account · no API key</span><a href="https://github.com/charanvalavala" rel="noopener noreferrer">Project owner ↗</a></footer>
+    <script type="module" src="src/app.js"></script>
+  </body>
+</html>
